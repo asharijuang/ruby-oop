@@ -37,6 +37,33 @@ puts "memanggil variable di dalam class MyClass :#{$my_variable}"
 
 # ---------------------------------- End -------------------------------------------
 
+# ------------------ Inisialisasi variable pada class ------------------------------
+class Person
+  # menggunakan nilai parameter yg diterima untuk me-instansiate variable dalam class
+  def initialize(name,age,profession)
+    # membuat variable nama dan memberikan nilai dengan mengambil value dari nama
+    @name = name
+    @age = age
+    @profession = profession
+  end
+  # mendefinisikan method yang me-return nilai dari instanse variable name
+  # karena kita tidak bisa langsung memanggil instanse var dari luar class
+  def name
+    @name
+  end
+
+end
+
+anggota = Person.new("Ashari Juang", 25, "Programmer")
+# Menampilkan variable nilai dari var nama untuk class yang baru saja dibuat
+puts "nama : #{anggota.name}"
+# Di Ruby tidak bisa memanggil langsung dengan cara ini,
+# puts anggota.age
+# puts anggota.profession
+# Harus mendefinisikan method dengan nama age atau profession yang mengembalikan nilai var tersebut
+
+# ---------------------------------- End -------------------------------------------
+
 class Computer
 
   $manufacturer = "Mango Computer, Inc."
